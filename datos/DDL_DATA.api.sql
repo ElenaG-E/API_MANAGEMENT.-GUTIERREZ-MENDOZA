@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS todos (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    completed TINYINT(1) NULL,
+    userId INT NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_userId FOREIGN KEY (userId) REFERENCES users(id));
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR (250) NOT NULL,
+    username VARCHAR (250) NOT NULL,
+    email VARCHAR (250) NOT NULL,
+    phone VARCHAR (250) NOT NULL,
+    website VARCHAR (250) NOT NULL,
+    PRIMARY KEY (id));
